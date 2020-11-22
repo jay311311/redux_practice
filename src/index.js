@@ -1,13 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+const plus = document.getElementById("plus")
+const minus = document.getElementById("minus")
+const number  = document.querySelector("span")
 
-import App from './App';
+let counter = 0
+
+number.innerText = counter;
+
+const update = () =>{
+  number.innerText = counter;
+}
+
+const handlePlus = ()=>{
+  counter = counter + 1;
+  update()
+}
+
+const handleMinus = ()=>{
+  counter = counter - 1;
+  update()
+  
+}
 
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
+plus.addEventListener("click", handlePlus)
+minus.addEventListener("click", handleMinus)
